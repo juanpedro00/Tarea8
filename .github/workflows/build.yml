@@ -1,0 +1,19 @@
+
+on: push
+ 
+jobs:
+  run_script:
+    name: Run Python script
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'  # Specify the Python version you want to use
+
+    - name: Run Python script
+      run: python main.py  # Replace 'your_script.py' with the actual name of your Python script
